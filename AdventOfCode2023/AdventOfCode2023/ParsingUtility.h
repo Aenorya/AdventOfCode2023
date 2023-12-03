@@ -6,6 +6,7 @@
 class ParsingUtility
 {
 public:
-    static std::string  GetInputText(const std::string& filename);
+    static int IsDigit(char);
+    static std::string GetInputText(const std::string& filename);
     
 };

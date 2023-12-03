@@ -158,18 +158,21 @@
     <ClCompile Include="Day.cpp" />
     <ClCompile Include="Day1.cpp" />
     <ClCompile Include="Day2.cpp" />
+    <ClCompile Include="Day3.cpp" />
     <ClCompile Include="ParsingUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day.h" />
     <ClInclude Include="Day1.h" />
     <ClInclude Include="Day2.h" />
+    <ClInclude Include="Day3.h" />
     <ClInclude Include="ParsingUtility.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\dataTest.txt" />
     <Content Include="Data\day1.txt" />
     <Content Include="Data\day2.txt" />
+    <Content Include="Data\day3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

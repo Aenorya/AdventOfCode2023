@@ -1,6 +1,12 @@
 #include "ParsingUtility.h"
 using namespace std;
 
+int ParsingUtility::IsDigit(char c)
+{
+    int digit = c - '0';
+    return (digit>=0 && digit<10)? digit : -1;
+}
+
 string ParsingUtility::GetInputText(const string& filename){
     string text;
     ifstream myFile("Data/"+ filename + ".txt");
