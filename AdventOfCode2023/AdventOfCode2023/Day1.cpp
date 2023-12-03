@@ -13,20 +13,18 @@ void Day1::RunFirst()
     int total = 0, zero = '0';
     if (myfile.is_open())
     {
-        int first=-1, last=-1;
         while ( getline (myfile,line) )
         {
-            first = -1;
-            last = -1;
+            int first=-1, last=-1;
             for(int c=0; c<line.length(); c++){
-                if(line[c]-zero < 10){
-                    if(first == -1){ first = line[c]-zero;}
-                    if(c > last) last = line[c]-zero;
+                if(line[c]-'0' < 10)
+                {
+                    if(first == -1){ first = line[c]-'0';}
+                    last = line[c]-'0';
                 }
             }
             if(first != -1) {
                 total += (first*10)+last;
-                cout<<((first*10)+last)<<endl;
             }
         }
         cout<<"Total : "<<total<<endl;
@@ -57,7 +55,6 @@ void Day1::RunSecond()
             
             if(first != -1) {
                 total += (first*10)+last;
-                cout<<line<<": "<<((first*10)+last)<<endl;
             }
         }
         cout<<"Total : "<<total<<endl;
