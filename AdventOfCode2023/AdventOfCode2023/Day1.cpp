@@ -9,57 +9,47 @@ void Day1::RunFirst()
 {
     cout<<"=========PART 1==========\n";
     string line;
-    ifstream myfile("Data/dataTest.txt");
     int total = 0, zero = '0';
-    if (myfile.is_open())
+
+    while ( getline (inputFile,line) )
     {
-        while ( getline (myfile,line) )
-        {
-            int first=-1, last=-1;
-            for(int c=0; c<line.length(); c++){
-                if(line[c]-'0' < 10)
-                {
-                    if(first == -1){ first = line[c]-'0';}
-                    last = line[c]-'0';
-                }
-            }
-            if(first != -1) {
-                total += (first*10)+last;
+        int first=-1, last=-1;
+        for(int c=0; c<line.length(); c++){
+            if(line[c]-'0' < 10)
+            {
+                if(first == -1){ first = line[c]-'0';}
+                last = line[c]-'0';
             }
         }
-        cout<<"Total : "<<total<<endl;
-    }else
-    {
-        cout<<"Failed to open file..."<<endl;
+        if(first != -1) {
+            total += (first*10)+last;
+        }
     }
-    myfile.close();
+    cout<<"Total : "<<total<<endl;
 }
+
 
 void Day1::RunSecond()
 {
     cout<<"\n\n=========PART 2==========\n";
-
+    inputFile.clear();
+    inputFile.seekg(0);
     string line;
-    ifstream myfile("Data/dataTest.txt");
     int total = 0, zero = '0';
-    if (myfile.is_open())
+    while ( getline (inputFile,line) )
     {
-        while ( getline (myfile,line) )
-        {
-            int first=-1, last=-1;
-            size_t firstNum = 0, lastNum = 0;
-            //Finding number digits
-            FindDigits(line, first, firstNum, last, lastNum);
-            //Finding text digits
-            FindAlphaDigit(line, first, firstNum, last, lastNum);
-            
-            if(first != -1) {
-                total += (first*10)+last;
-            }
+        int first=-1, last=-1;
+        size_t firstNum = 0, lastNum = 0;
+        //Finding number digits
+        FindDigits(line, first, firstNum, last, lastNum);
+        //Finding text digits
+        FindAlphaDigit(line, first, firstNum, last, lastNum);
+        
+        if(first != -1) {
+            total += (first*10)+last;
         }
-        cout<<"Total : "<<total<<endl;
     }
-    
+    cout<<"Total : "<<total<<endl;
 }
 
 void FindDigits(string line, int& first, size_t& firstPos, int& last, size_t& lastPos)
