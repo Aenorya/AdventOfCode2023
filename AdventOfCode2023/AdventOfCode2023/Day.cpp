@@ -1,8 +1,9 @@
 #include "Day.h"
 
-Day::Day(int day)
+Day::Day(int day, bool test)
 {
-    inputFile = ifstream("Data/day"+std::to_string(day)+".txt");
+    if(!test) inputFile = ifstream("Data/day"+std::to_string(day)+".txt");
+    else inputFile = ifstream("Data/dataTest.txt");
     if(!inputFile.is_open())
     {
         cout<<"Failed to open file..."<<endl;
